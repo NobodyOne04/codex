@@ -6,6 +6,32 @@ Claude Code is installed locally as `claude`. This repo documents the Codex-side
 for asking Claude for a read-only second opinion. The sibling `../claude` repo documents
 the reverse direction: Claude calls Codex through `codex exec` and `codex review`.
 
+## Setup
+
+Make the skills load in every repo, not only this one:
+```
+mkdir -p ~/.agents/skills
+for d in ~/projects/codex/.agents/skills/*/; do
+  n=$(basename "$d")
+  if [ -e ~/.agents/skills/"$n" ]; then echo "skip $n: already exists"; else ln -s "$d" ~/.agents/skills/"$n"; fi
+done
+```
+Each skill gets its own link, so other skills in `~/.agents/skills` stay untouched. Run it
+again after adding a skill here.
+Codex loads whatever branch is checked out here, so keep the repo on `main`.
+
+## Skills
+
+| Skill | For |
+|---|---|
+| `code-review` | read-only review of a branch or PR, verified findings |
+| `adr-critique` | critique of ADR drafts before the owner approves them |
+| `root-cause` | independent root-cause analysis of a bug before Claude fixes it |
+| `security-audit` | second auditor next to Claude, read-only, secrets redacted |
+| `docs-writer` | docs in its own worktree; Claude commits them |
+| `git-flow` | branch/commit/PR flow, only in this repo |
+| `claude-bridge` | ask Claude for a read-only second opinion |
+
 ## Use the bridge
 
 From a project directory, ask Codex to use the `claude-bridge` skill. It invokes Claude
