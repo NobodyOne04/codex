@@ -16,4 +16,5 @@ read-only, as described in `.agents/skills/claude-bridge/SKILL.md`.
 
 ## Conventions
 
-- This repo follows the read-only second-agent role; see `AGENTS.md`.
+- Codex may use the full Git flow only in this repo; see `AGENTS.md` and
+  `CODEX_GIT_GUIDE.md`.
