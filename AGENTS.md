@@ -16,6 +16,8 @@
   only in `*.md` files or under `docs/` (`docs-writer` skill).
 - Pick the skill for the job: `code-review`, `adr-critique`, `root-cause`,
   `security-audit`, `docs-writer`, `git-flow`, `claude-bridge` (`.agents/skills/`).
+- Always follow `codex-context`, in every repo: create `AGENTS.md` if missing, keep it true,
+  and list unfinished work under `## Pending for Codex` before you stop.
 - Format each finding on one line as `[P1] file:line: problem (why it matters)` (or P2/P3).
   Say `nothing found` when there are no findings.
 - Be a second opinion: state confidence, verify claims, and do not pad reviews with style

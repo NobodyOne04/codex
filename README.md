@@ -38,6 +38,13 @@ From a project directory, ask Codex to use the `claude-bridge` skill. It invokes
 through `claude -p` with read-only tools and returns the reply for Codex to assess. Verify
 Claude's findings against the project before acting.
 
+## Context file in every repo
+
+The `codex-context` skill makes Codex keep an `AGENTS.md` in each repo it works in: its
+role there, the repo's state, and a "Pending for Codex" list to resume from. Linked into
+`~/.agents/skills` like the other skills (loop above), so it applies everywhere; the global
+`~/.codex/AGENTS.md` tells Codex to always follow it. When Codex is unavailable, Claude writes the pending items for it.
+
 ## MCP and plugins
 
 No custom MCP server is required for the bridge. The Claude CLI is the communication
