@@ -12,7 +12,8 @@ read-only, as described in `.agents/skills/claude-bridge/SKILL.md`.
 - `AGENTS.md`: Codex role and review instructions.
 - `.agents/skills/`: Codex skills, each linked user-wide into `~/.agents/skills` (README):
   `code-review`, `adr-critique`, `root-cause`, `security-audit`, `docs-writer`,
-  `git-flow`, `claude-bridge` (read-only Claude consultation).
+  `git-flow`, `claude-bridge` (read-only Claude consultation), `codex-context` (keep an
+  `AGENTS.md` in every repo).
 - `plugins/claude-bridge/`: notes on future Codex plugin packaging.
 - `logs/`: Claude CLI exchange log.
 
